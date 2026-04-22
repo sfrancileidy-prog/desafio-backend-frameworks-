@@ -1,11 +1,13 @@
+const UserModel = require('../models/UserModel');
+
 class UserController {
-  static createUser(req, res) {
-    const { name, email } = req.body;
+    static createUser(req, res) {
+        const { name, email } = req.body;
 
-    const user = {name, email};
+        const user = new UserModel(name, email);
 
-    return res.status(201).json(user);
-  }
+        return res.status(201).json(user);
+    }
 }
 
 module.exports = UserController;
