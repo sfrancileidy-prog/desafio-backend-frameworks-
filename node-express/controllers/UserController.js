@@ -4,7 +4,7 @@ class UserController {
   static createUser(req, res) {
     const { name, email } = req.body;
 
-    const user = new UserModel(name, email);
+    const user = new (name, email);
 
     return res.status(201).json(user);
   }
